@@ -45,35 +45,4 @@ class Rat : Enemy
             player.Combat(this, true);
         }
     }
-    private int ratAttack(Player player, Enemy enemy)
-    {
-        int enemyAttack = enemy.AttackDice.Throw();
-        int playerDefence = player.DefenceDice.Throw();
-        int enemyDamage = enemyAttack - playerDefence;
-
-        if (enemyDamage > 0)
-        {
-            player.Health -= enemyDamage;
-            Console.SetCursorPosition(0, 1);
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"{enemy.Name} attacked you, dealing {enemyDamage} dmg");
-            Console.ResetColor();
-            if (!player.IsAlive())
-            {
-                Console.SetCursorPosition(0, 1);
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You have died, game over");
-                // Implement game over logic if needed no need
-            }
-            return enemyDamage;
-        }
-        else
-        {
-            Console.SetCursorPosition(0, 1);
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine($"{enemy.Name} attacked you, but did no dmg");
-            Console.ResetColor();
-        }
-        return 0;
-    }
 }

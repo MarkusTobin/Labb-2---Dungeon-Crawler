@@ -5,8 +5,6 @@
     public Dice AttackDice { get; protected set; }
     public Dice DefenceDice { get; protected set; }
 
-
-
     protected LevelData levelData;
     public Enemy(int x, int y, string name, int health, Dice attackDice, Dice defenceDice, char typeOfElement, ConsoleColor color, LevelData levelData)
         : base(x, y, typeOfElement, color)
@@ -25,5 +23,4 @@
     {
         return Health > 0;
     }
-
 }

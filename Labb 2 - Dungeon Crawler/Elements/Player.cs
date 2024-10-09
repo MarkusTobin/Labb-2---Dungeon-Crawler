@@ -44,7 +44,6 @@ class Player : LevelElement
         }
         levelData.UpdateVisibility(this);
     }
-
     public void MoveUp()
     {
         if (!levelData.IsWallAt(X, Y - 1) && !levelData.IsEnemyAt(X, Y - 1))
@@ -93,7 +92,6 @@ class Player : LevelElement
             Combat(enemy);
         }
     }
-
     private int PlayerAttack(Enemy enemy)
     {
         int playerAttack = AttackDice.Throw();
@@ -135,20 +133,12 @@ class Player : LevelElement
         int playerDefence = player.DefenceDice.Throw();
         int enemyDamage = enemyAttack - playerDefence;
 
-
         if (enemyDamage > 0)
         {
             player.Health -= enemyDamage;
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"{enemy.Name} hits you for {enemyDamage} dmg");
             Console.ResetColor();
-            /*if (player.Health <= 0)
-            {
-                Console.SetCursorPosition(0,1);
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You have died, game over");
-                return 0;
-            }*/
             return enemyDamage;
         }
         else
@@ -190,7 +180,6 @@ class Player : LevelElement
     {
         Combat(enemy, false);
     }
-
     public void ClearLine(int lineNumber)
     {
         Console.SetCursorPosition(0, lineNumber);

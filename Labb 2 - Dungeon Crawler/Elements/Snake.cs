@@ -6,8 +6,6 @@ class Snake : Enemy
     }
     public override void Update(Player player)
     {
-
-
         int distansFromPlayer = (int)Math.Sqrt(Math.Pow(X - player.X, 2) + Math.Pow(Y - player.Y, 2));
         if (distansFromPlayer <= 2)
         {

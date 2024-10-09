@@ -28,11 +28,9 @@
                 }
                 EnemyTurn();
                 Turn();
-               
             }
         }
     }
-
     private void Turn()
     {
         Console.SetCursorPosition(0, 0);
@@ -57,7 +55,6 @@
             }
         }
     }
-
     private void EnemyTurn()
     {
         List<Enemy> enemiesToRemove = new List<Enemy>();
@@ -73,8 +70,6 @@
                 }
             }
         }
-
-
         foreach (var enemy in enemiesToRemove)
         {
             levelData.RemoveElement(enemy);

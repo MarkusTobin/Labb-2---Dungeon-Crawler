@@ -38,7 +38,6 @@
             Console.WriteLine("Something went wrong");
         }
     }
-
     public void UpdateVisibility(Player player)
     {
         foreach (var element in Elements)

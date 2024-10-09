@@ -18,7 +18,6 @@ abstract class LevelElement
     {
         if (isVisible || DiscoveredWalls)
         {
-
         Console.SetCursorPosition(X, Y + 3);
         Console.CursorVisible = false;
         Console.ForegroundColor = Color;
@@ -40,6 +39,4 @@ abstract class LevelElement
         Console.SetCursorPosition(X, Y + 3);
         Console.Write(' ');
     }
-
-
 }
